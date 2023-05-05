@@ -109,7 +109,7 @@ function App() {
 
       if (token) {
         return Promise.resolve();
-      }
+      } 
       return Promise.reject();
     },
 
