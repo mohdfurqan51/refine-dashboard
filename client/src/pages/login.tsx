@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
 import { Container, Box } from "@pankod/refine-mui";
+import { SpinnerCircular } from 'spinners-react';
 
 // Logo
 import { yariga } from "../assets";
@@ -23,6 +24,7 @@ export const Login: React.FC = () => {
           ux_mode: "popup",
           client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
           callback: async (res: CredentialResponse) => {
+            <SpinnerCircular />
             if (res.credential) {
               login(res);
             }
