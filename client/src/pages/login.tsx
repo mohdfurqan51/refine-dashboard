@@ -24,13 +24,13 @@ export const Login: React.FC = () => {
           ux_mode: "popup",
           client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
           callback: async (res: CredentialResponse) => {
-            <SpinnerCircular />
             if (res.credential) {
               login(res);
             }
           },
         });
         window.google.accounts.id.renderButton(divRef.current, {
+          <SpinnerCircular />
           theme: "filled_blue",
           size: "medium",
           type: "standard",
