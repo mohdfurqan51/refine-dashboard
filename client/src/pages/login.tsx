@@ -17,7 +17,7 @@ export const Login: React.FC = () => {
     const divRef = useRef<HTMLDivElement>(null);
     
     const handleClick = () => {setLoading(true)};
-    onClick={handleClick};
+    onclick={handleClick};
     
     if(loading) {
       <SpinnerCircular />
