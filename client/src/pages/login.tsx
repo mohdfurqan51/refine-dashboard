@@ -16,7 +16,7 @@ export const Login: React.FC = () => {
   const GoogleButton = (): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
     
-    onClick={setLoading(true)}
+    onClick={()=>{setLoading(true)}}
     
     if(loading) {
       <SpinnerCircular />
