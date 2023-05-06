@@ -16,9 +16,6 @@ export const Login: React.FC = () => {
   const GoogleButton = (): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
     
-    const handleClick = () => {setLoading(true)};
-    onclick={handleClick};
-    
     if(loading) {
       <SpinnerCircular />
     }
@@ -33,6 +30,7 @@ export const Login: React.FC = () => {
           ux_mode: "popup",
           client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
           callback: async (res: CredentialResponse) => {
+            setLoading(true);
             if (res.credential) {
               login(res);
               setLoading(false);
