@@ -13,7 +13,7 @@ export const Login: React.FC = () => {
   
   const [loading, setLoading] = useState(false);
 
-  const GoogleButton = (): JSX.Element => {
+  const GoogleButton = ({handleClick}): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
     
     const handleClick = () => {setLoading(true)}
