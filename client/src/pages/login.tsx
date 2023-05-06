@@ -13,10 +13,11 @@ export const Login: React.FC = () => {
   
   const [loading, setLoading] = useState(false);
 
-  const GoogleButton = (): JSX.Element => {
+  const GoogleButton = ({handleClick}): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
     
     const handleClick = () => {setLoading(true)};
+    onClick={handleClick};
     
     if(loading) {
       <SpinnerCircular />
@@ -78,7 +79,7 @@ export const Login: React.FC = () => {
             <img src={yariga} alt="Yariga Logo" />
           </div>
           <Box mt={4}>
-            <GoogleButton onClick={handleClick} />
+            <GoogleButton handleClick={handleClick} />
           </Box>
         </Box>
       </Container>
