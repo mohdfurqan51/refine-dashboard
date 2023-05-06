@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLogin } from "@pankod/refine-core";
 import { Container, Box } from "@pankod/refine-mui";
 import { SpinnerCircular } from 'spinners-react';
@@ -10,9 +10,17 @@ import { CredentialResponse } from "../interfaces/google";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
+  
+  const [loading, setLoading] = useState(false);
 
   const GoogleButton = (): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
+    
+    onClick={()=>setLoading(true)}
+    
+    if(loading) {
+      <SpinnerCircular />
+    }
 
     useEffect(() => {
       if (typeof window === "undefined" || !window.google || !divRef.current) {
@@ -26,11 +34,11 @@ export const Login: React.FC = () => {
           callback: async (res: CredentialResponse) => {
             if (res.credential) {
               login(res);
+              setLoading(false);
             }
           },
         });
         window.google.accounts.id.renderButton(divRef.current, {
-          <SpinnerCircular />
           theme: "filled_blue",
           size: "medium",
           type: "standard",
