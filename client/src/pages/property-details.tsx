@@ -19,7 +19,7 @@ function checkImage(url: any) {
 
   const { data, isLoading, isError } = queryResult;
 
-  const propertyDetails = data?.data ?? {};
+  const propertyDetails = data?.data ?? [];
 
   if (isLoading) {
     return <div>Loading...</div>;
