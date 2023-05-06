@@ -13,7 +13,7 @@ export const Login: React.FC = () => {
   
   const [loading, setLoading] = useState(false);
 
-  const GoogleButton = ({handleClick}): JSX.Element => {
+  const GoogleButton = (): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
     
     const handleClick = () => {setLoading(true)};
@@ -79,7 +79,7 @@ export const Login: React.FC = () => {
             <img src={yariga} alt="Yariga Logo" />
           </div>
           <Box mt={4}>
-            <GoogleButton handleClick={handleClick} />
+            <GoogleButton />
           </Box>
         </Box>
       </Container>
