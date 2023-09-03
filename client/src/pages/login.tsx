@@ -70,8 +70,10 @@ export const Login: React.FC = () => {
           }}
         >
        
-          
+          <Box mt={4}>
             <GoogleButton />
+          </Box>
+            
           
         </Box>
       </Container>
