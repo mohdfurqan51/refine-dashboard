@@ -3,7 +3,7 @@ import { useLogin } from "@pankod/refine-core";
 import { Container, Box } from "@pankod/refine-mui";
 
 // Logo
-import { yariga } from "../assets";
+// import { yariga } from "../assets";
 
 import { CredentialResponse } from "../interfaces/google";
 
@@ -70,9 +70,9 @@ export const Login: React.FC = () => {
           }}
         >
        
-          <Box mt={4}>
+          
             <GoogleButton />
-          </Box>
+          
         </Box>
       </Container>
     </Box>
